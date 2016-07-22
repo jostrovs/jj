@@ -3,6 +3,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/jj.css">
+    <link rel="stylesheet" type="text/css" href="css/examples.css">
     <script src="js/jquery-3.0.0.min.js"></script>
     <script src="js/jj.js"></script>
 
@@ -10,15 +11,68 @@
 </head>
 
 <body>
-    <h2 class="jj-toggle-next">Ylin otsikko, jonka perään tulee plus tai minus</h2>
-    <div>
-        <h3>Ekan aladivin otsikko</h3>
-        <div class="jj-toggle">Eka aladivi</div>
-        
-        <h3 class="jj-toggle-next">Tokan aladivin otsikko</h3>
-        <div>Toka alaadivi</div>
+
+    <h1>Toggleable jQuery plugin</h1>
+    <p>Tarjoaa helpon tavan näyttää/piilottaa div-elementtejä klikkaamalla.</p>
+    <p>Voidaan sitoa html:ssä joko piilotettavaan diviin itseensä tai sitä edeltävään elementtiin.</p>
+    <p>Sidonta voidaan tehdä seuraavilla tavoilla:
+        <ol>
+            <li>Asetetaan piilotettavalle div-elementille luokka <span class="inline-code">jj-toggle</span></li>
+            <li>Asetetaan piilotettavaa div-elementtiä edeltävälle elementille (otsikolle) elementille luokka <span class="inline-code">jj-toggle-next</span></li>
+            <li>Kutsutaan jQueryllä piilotettavalle div-elementille plugin-metodia <span class="inline-code">jjToggleable</span></li>
+            <li>Kutsutaan jQueryllä otsikkoelementille plugin-metodia <span class="inline-code">jjNextToggleable</span></li>
+        </ol>
+    </p>
+    <p>jQuery-plugin-metodit hyväksyvät options-objektin, jolla on seuraavat asetukset:
+        <ul>
+            <li><span class="inline-code">hideOnStart: true</span> Piilotetaanko div oletuksena</li>
+            <li><span class="inline-code">addToggleElement: true</span> Lisätäänkö toggle-elementti: <span class="jj-toggle-show">+</span></li>
+            <li><span class="inline-code">useHeaderElement: true</span> Reagoiko otsikkoelementti klikkaukseen</li>
+        </ul>
+        Jos toggle-elementtiä ei lisätä, käytetään otsikkoa aina (muutoin ei olisi mitään tapaa saada piilotettua elementtiä takaisin).
+    </p>
+    <p>Käyttö:<br>jQyery täytyy tietysti löytyä, ja sen jälkeen jj.js. Samoin jj.css oletetaan löytyvän, mutta siinä on ainoastaan toggle-elementtien tyylittely.
+    </p>
+
+    <div class="example">
+        <h3>Esimerkki</h3>
+        <p>div-elementtiin sitominen:</p>
+        <div class="code">
+            &lt;span&gt;Elementti, josta togglea kontrolloidaan&lt;/span&gt;<br> &lt;div <span class="highlight-code">class="jj-toggle"</span>&gt;<br>            &nbsp;&nbsp;&nbsp;Elementin sisältö...<br> &lt;/div&gt;
+        </div>
+
+        <br> Output:
+        <div class="output">
+            <span>Elementti, josta togglea kontrolloidaan</span>
+            <div class="jj-toggle">
+                Elementin sisältö...
+            </div>
+        </div>
     </div>
-    <script></script>
+
+    <div class="example">
+        <h3>Esimerkki</h3>
+        <p>Otsikkoon sidonta javascriptillä:</p>
+        <div class="code">
+            &lt;span <span class="highlight-code">id="id"</span>&gt;Elementti, josta togglea kontrolloidaan&lt;/span&gt;<br>            &lt;div&gt;
+            <br> &nbsp;&nbsp;&nbsp;Elementin sisältö...<br> &lt;/div&gt;
+            <br> &lt;script&gt;
+            <br> &nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="highlight-code">$("#id").jjNextToggleable();</span><br> &lt;/script&gt;
+        </div>
+
+        <br> Output:
+        <div class="output">
+            <span id="id">Elementti, josta togglea kontrolloidaan</span>
+            <div>
+                Elementin sisältö...
+            </div>
+            <script>
+                $("#id").jjNextToggleable();
+            </script>
+        </div>
+    </div>
+
 </body>
 
 </html>

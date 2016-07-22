@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.level-1 {
+    background-color: #eee;
+    border: 1px solid gray;
+}
+.level-2 {
+    background-color: #ddd;
+    border: 1px solid gray;
+}
+.level-3 {
+    background-color: #ccc;
+    border: 1px solid gray;
+}
+
+.example {
+    background-color: #e3e3e3;
+    border: 1px solid gray;
+    width: 60%;
+    padding: 8px;
+    margin-top: 20px;
+}
+
+.code {
+    background-color: white;
+
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+    line-height: 1.4;
+    width: auto;
+    padding: 8px 12px;
+    border-left: 4px solid #009688;
+    word-wrap: break-word;    
+}
+
+.inline-code {
+    background-color: #eee;
+    padding: 1px;
+    font-family: Consolas,"courier new";
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.output {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: white;
+}
+
+.highlight-code {
+    background-color: #ffff55;
+}
+

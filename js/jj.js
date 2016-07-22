@@ -52,7 +52,7 @@
         let toggle = function (e) {
             $("#" + idShow).toggle();
             $("#" + idHide).toggle();
-            $("#" + id).toggle();
+            $("#" + id).toggle("slow");
             e.stopPropagation();
         };
 
